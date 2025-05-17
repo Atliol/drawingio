@@ -183,7 +183,7 @@ function drawStar(cx, cy, spikes, outerRadius, innerRadius, stroke = true) {
 function beginDraw(e) {
   if (tool === "text") {
     const {x, y} = getPointerPos(e);
-    const text = prompt("Enter text to place on canvas:");
+    const text = prompt("Enter text :");
     if (text) {
       pushUndo();
       ctx.save();
