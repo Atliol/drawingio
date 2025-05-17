@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paint App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="icon" href="../photo/game.jpg" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="toolbar">
+      <div class="tool-group">
+        <button class="tool-btn" data-tool="brush" title="Brush"><i class="fa-solid fa-paintbrush"></i></button>
+        <button class="tool-btn" data-tool="line" title="Line"><i class="fa-solid fa-slash"></i></button>
+        <button class="tool-btn" data-tool="rect" title="Rectangle"><i class="fa-regular fa-square"></i></button>
+        <button class="tool-btn" data-tool="ellipse" title="Ellipse"><i class="fa-regular fa-circle"></i></button>
+        <button class="tool-btn" data-tool="star" title="Star"><i class="fa-regular fa-star"></i></button>
+        <button class="tool-btn" data-tool="label" title="Label"><i class="fa-solid fa-tag"></i></button>
+        <button class="tool-btn" data-tool="text" title="Text"><i class="fa-solid fa-font"></i></button>
+        <button class="tool-btn" data-tool="eraser" title="Eraser"><i class="fa-solid fa-eraser"></i></button>
+        <button class="tool-btn" data-tool="picker" title="Color Picker"><i class="fa-solid fa-eye-dropper"></i></button>
+        <label class="tool-btn" title="Upload Image">
+          <i class="fa-solid fa-image"></i>
+          <input type="file" id="imgInput" accept="image/*" style="display:none;">
+        </label>
+      </div>
+      <div class="tool-group">
+        <input type="color" id="color" value="#2222ff" title="Color">
+        <div class="color-swatches">
+          <button class="swatch" style="background:#000;"></button>
+          <button class="swatch" style="background:#fff;"></button>
+          <button class="swatch" style="background:#e74c3c;"></button>
+          <button class="swatch" style="background:#f1c40f;"></button>
+          <button class="swatch" style="background:#2ecc71;"></button>
+          <button class="swatch" style="background:#3498db;"></button>
+          <button class="swatch" style="background:#8e44ad;"></button>
+        </div>
+        <input id="size" type="range" min="2" max="30" value="5" title="Brush Size">
+        <span id="size-preview"></span>
+      </div>
+      <div class="tool-group file-actions">
+        <button id="newBtn" class="tool-btn" title="New"><i class="fa-solid fa-file"></i></button>
+        <button id="clear" class="tool-btn" title="Clear Canvas"><i class="fa-solid fa-broom"></i></button>
+        <button id="undoBtn" class="tool-btn" title="Undo"><i class="fa-solid fa-rotate-left"></i></button>
+        <button id="redoBtn" class="tool-btn" title="Redo"><i class="fa-solid fa-rotate-right"></i></button>
+        <button id="saveBtn" class="tool-btn" title="Save"><i class="fa-solid fa-floppy-disk"></i></button>
+        <button id="nightBtn" class="tool-btn" title="Toggle Night Mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="canvas-area">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="statusbar" id="statusbar">
+      Tool: <span id="status-tool">Brush</span> | 
+      Color: <span id="status-color" style="display:inline-block;width:20px;height:20px;border:1px solid #888;vertical-align:middle;"></span> | 
+      Size: <span id="status-size"></span> | 
+      X: <span id="status-x">0</span> Y: <span id="status-y">0</span>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
